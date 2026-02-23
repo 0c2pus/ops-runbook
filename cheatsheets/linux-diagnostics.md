@@ -1,36 +1,32 @@
-# Linux System Diagnostics Checklist
+# Linux System Diagnostics & Performance Tuning
 
-This guide provides a structured approach to identifying system bottlenecks and service failures.
+Comprehensive guide for identifying bottlenecks in CPU, Memory, I/O, and Processes.
 
-## 1. System Overview & Load
-Check general system health and CPU/Load Average.
-* `uptime` — Quick view of load average and boot time.
-* `top` (or `htop`) — Real-time process monitoring and CPU/RAM usage.
-* `vmstat 1` — Virtual memory statistics and CPU activity over time.
+## 1. System Load & CPU Analysis
+* `uptime` — Check load average (1, 5, 15 min). Compare with `nproc` (number of cores).
+* `htop` — Interactive monitor. Press `F6` to sort by CPU/Memory. Look for `wa` (I/O Wait).
+* `vmstat 1 5` — Check `r` (runnable) vs `b` (blocked). If `b` is high, the system is waiting for I/O.
+* `mpstat -P ALL 1` — Check if a single CPU core is bottlenecked (single-threaded process issues).
 
-## 2. Memory Analysis
-Identify RAM exhaustion or OOM (Out of Memory) issues.
-* `free -h` — Display amount of free and used system memory in human-readable format.
-* `cat /proc/meminfo` — Detailed memory statistics.
-* `ps aux --sort=-%mem | head -n 10` — List top 10 memory-consuming processes.
+## 2. Advanced Process Troubleshooting
+* `ps aux --sort=-%mem | head` — Identify top memory-consuming processes.
+* `lsof -p <PID>` — List all files and network sockets opened by a specific process.
+* `strace -p <PID> -e trace=open,connect` — Trace specific system calls (e.g., why a process can't open a file or connect to a DB).
+* `pstack <PID>` — Show the current stack trace of a running process (for frozen/hung apps).
 
-## 3. Storage & Disk I/O
-Check for full partitions or disk performance bottlenecks.
-* `df -h` — Check disk space usage per partition.
-* `du -sh /* 2>/dev/null` — Identify the largest directories in the root filesystem.
-* `iostat -xz 1` — Detailed disk I/O statistics (check for high %util).
-* `lsof +L1` — Find deleted files that are still consuming space (held by processes).
+## 3. Storage & Disk I/O Integrity
+* `df -hT` — Disk usage with filesystem type (XFS, Ext4). Check for Read-Only filesystems.
+* `df -i` — **Critical:** Check Inode usage. If 100%, you cannot create files even with free GBs.
+* `iostat -xz 1` — Monitor disk utilization (`%util`). Values > 80% indicate I/O saturation.
+* `lsblk -f` — View block devices, UUIDs, and mount points.
+* `smartctl -a /dev/sdX` — Check physical disk health (S.M.A.R.T. errors).
 
-## 4. Networking & Ports
-Identify connectivity issues and port bindings.
-* `ss -tulpn` — List all listening ports and the associated processes.
-* `ip addr` — Check interface configurations and IP addresses.
-* `ping -c 4 8.8.8.8` — Verify basic external connectivity.
-* `nc -zv <host> <port>` — Check if a specific port is open on a remote host.
+## 4. System Limits & Stability
+* `ulimit -a` — Check system-imposed limits (Max open files, max processes).
+* `dmesg -T | tail -n 50` — Check kernel ring buffer for OOM Killer (Out of Memory) or Hardware errors.
+* `journalctl -p 3 -xb` — View only high-priority errors from the current boot.
 
-## 5. Services & Logs
-Investigate service failures and system errors.
-* `systemctl list-units --failed` — List all services that failed to start.
-* `systemctl status <service_name>` — Check the current state of a specific service.
-* `journalctl -p 3 -xb` — Show high-priority errors from the current boot.
-* `tail -f /var/log/syslog` (or `/var/log/messages`) — Monitor general system logs in real-time.
+## 5. Memory Deep Dive
+* `free -mw` — Detailed memory stats in MB (Wide mode shows buffers/cache separately).
+* `cat /proc/meminfo` — Low-level memory stats (check for HugePages or Slab leaks).
+* `slabtop -o` — Identify kernel-level memory consumption (Slab cache).

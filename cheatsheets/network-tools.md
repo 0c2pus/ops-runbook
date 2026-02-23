@@ -1,35 +1,30 @@
 # Network Diagnostics & Connectivity Troubleshooting
 
-This guide covers tools for verifying network configurations, testing connectivity, and identifying port-level issues.
+Tools for verifying network configurations, DNS, SSL, and traffic flow.
 
-## 1. Local Interface & Routing
-Check local IP addresses and the routing table.
-* `ip addr show` — Display all network interfaces and assigned IP addresses.
-* `ip route show` — View the system's routing table (check the default gateway).
-* `nmcli device status` — Quick status of network interfaces (managed by NetworkManager).
+## 1. Interface & Routing
+* `ip -c addr` — Display IP addresses with color highlights for easier reading.
+* `ip route show` — View the routing table and default gateway.
+* `ethtool <interface>` — Check physical link speed and duplex mode (1000Mb/s vs 100Mb/s).
 
-## 2. Connectivity Testing
-Verify if a remote host or service is reachable.
-* `ping -c 4 <hostname_or_IP>` — Check ICMP reachability and latency.
-* `traceroute <hostname>` — Trace the path packets take to a network host.
-* `mtr <hostname>` — A combination of ping and traceroute for real-time path analysis.
+## 2. Advanced Connectivity & API Testing (curl)
+* `curl -Iv https://example.com` — Show HTTP response headers and SSL certificate details.
+* `curl -Lo /dev/null -s -w "%{http_code}\n" <URL>` — Quickly check HTTP status code only.
+* `curl -x http://proxy:8080 <URL>` — Test connectivity through a specific proxy server.
 
-## 3. Port & Service Verification
-Check if specific services are listening or reachable through firewalls.
-* `ss -tulpn` — List all active listening TCP/UDP ports and their PIDs.
-* `nc -zv <host> <port>` — (Netcat) Scan a specific port to see if it's open (e.g., `nc -zv google.com 443`).
-* `telnet <host> <port>` — Alternative way to test connectivity to a specific port.
-* `nmap -p <port> <host>` — Advanced port scanning (if installed).
+## 3. Port & Service Discovery
+* `ss -tulpn` — List all listening TCP/UDP ports with PIDs (Replacement for `netstat`).
+* `nc -zv <host> <port>` — Test if a remote port is reachable (TCP).
+* `nc -uzv <host> <port>` — Test if a remote port is reachable (UDP).
+* `nmap -sV -p <port> <host>` — Detect service version running on a specific port.
 
-## 4. DNS Troubleshooting
-Resolve hostnames to IP addresses and verify DNS records.
-* `dig <hostname>` — Detailed DNS lookup (Query, Answer, and Authority sections).
-* `nslookup <hostname>` — Simple DNS query tool.
-* `host <hostname>` — Quick DNS resolution.
-* `cat /etc/resolv.conf` — Check configured DNS nameservers.
+## 4. DNS & SSL Verification
+* `dig +short <hostname>` — Quick IP resolution.
+* `dig @8.8.8.8 <hostname>` — Test resolution using a specific DNS server (e.g., Google).
+* `openssl s_client -connect <host>:443 -showcerts` — Inspect the full SSL certificate chain.
+* `openssl x509 -in cert.crt -noout -enddate` — Check if a certificate has expired.
 
-## 5. Traffic & Statistics
-Monitor active connections and network load.
-* `netstat -ant` — View all active TCP connections.
-* `tcpdump -i eth0` — Capture and analyze network packets (requires sudo).
-* `iftop` — Real-time bandwidth usage by host (if installed).
+## 5. Traffic Analysis & Latency
+* `mtr -rw <hostname>` — Combined Ping + Traceroute report (shows packet loss at each hop).
+* `tcpdump -i any port 80 -nn -v` — Capture traffic on port 80 (without resolving hostnames for speed).
+* `conntrack -L` — (Requires sudo) List all active network connections tracked by the firewall.
