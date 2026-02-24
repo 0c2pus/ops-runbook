@@ -25,7 +25,6 @@ ps -fp <PID>
 ```
 
 ### ✅ Root Cause
-
 A rogue background process was identified as the source of continuous writes to the log file. The process was no longer needed for testing but remained active.
 
 ### 🛠 Resolution
@@ -35,6 +34,5 @@ A rogue background process was identified as the source of continuous writes to 
 3. Confirmed the file size stopped growing by running ls -lh /var/log/bad.log twice with a delay.
 
 ### 💡 Lessons Learned
-
 * lsof (List Open Files) is the essential tool for linking files to processes.
 * Do not delete files that are being written to; always stop the process first to avoid disk descriptor issues.

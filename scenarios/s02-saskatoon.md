@@ -33,7 +33,6 @@ Command Breakdown:
 _Result: The IP `66.249.73.135` appeared 482 times._
 
 ## ✅ Root Cause
-
 Analytical task to identify the most active client/bot from access logs.
 
 ## 🛠 Resolution

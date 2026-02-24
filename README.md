@@ -21,6 +21,8 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s01-saint-john.md](./scenarios/s01-saint-john.md) — Process Management: terminating a rogue logging process filling the disk.
 * [s02-saskatoon.md](./scenarios/s02-saskatoon.md) — Filesystem: identifying and reclaiming exhausted disk space.
 * [s03-taipei.md](./scenarios/s03-taipei.md) — Text Processing: analyzing large-scale log files.
+* [s04-lhasa.md](./scenarios/s04-lhasa.md) — Data Processing: calculating a truncated two-decimal average from structured text data.
+* [s05-bucharest.md](./scenarios/s05-bucharest.md) — Database Connectivity: troubleshooting a PostgreSQL authentication configuration issue.
 
 ### 📂 [Templates](./templates/) — Incident Documentation
 

@@ -28,7 +28,6 @@ cat /etc/knockd.conf
 _Observation: The configuration specifies that a SYN packet to port 8080 triggers the opening of port 80._
 
 ## ✅ Root Cause
-
 The web server was protected by a Port Knocking daemon. Access to port 80 was restricted by `iptables` rules until a specific "knock" (SYN packet) was received on the designated trigger port (8080).
 
 ## 🛠 Resolution
