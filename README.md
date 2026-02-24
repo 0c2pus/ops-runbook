@@ -13,6 +13,7 @@ A collection of verified algorithms for rapid system diagnostics:
 * [Text Processing](./cheatsheets/text-processing.md) — CLI tools for searching, modifying, extracting, and analyzing text data (logs, configs, CSV).
 * [Docker Handbook](./cheatsheets/docker-handbook.md) — Diagnostics for containerized applications.
 * [SQL Reference](./cheatsheets/sql-reference.md) — Essential queries for data integrity checks and database troubleshooting.
+* [Kubernetes (K8s)](./cheatsheets/k8s-basics.md) — A guide to diagnose and resolve issues within Kubernetes clusters.
 
 ### 📂 [Scenarios](./scenarios/) — Incident Analysis (Post-Mortems)
 
@@ -23,6 +24,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s03-taipei.md](./scenarios/s03-taipei.md) — Text Processing: analyzing large-scale log files.
 * [s04-lhasa.md](./scenarios/s04-lhasa.md) — Data Processing: calculating a truncated two-decimal average from structured text data.
 * [s05-bucharest.md](./scenarios/s05-bucharest.md) — Database Connectivity: troubleshooting a PostgreSQL authentication configuration issue.
+* [s06-bilbao.md](./scenarios/s06-bilbao.md) — Kubernetes Pod Scheduling: troubleshooting a pod scheduling issue due to node selector and resource constraints.
 
 ### 📂 [Templates](./templates/) — Incident Documentation
 
