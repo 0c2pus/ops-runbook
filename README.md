@@ -14,6 +14,7 @@ A collection of verified algorithms for rapid system diagnostics:
 * [Docker Handbook](./cheatsheets/docker-handbook.md) — Diagnostics for containerized applications.
 * [SQL Reference](./cheatsheets/sql-reference.md) — Essential queries for data integrity checks and database troubleshooting.
 * [Kubernetes (K8s)](./cheatsheets/k8s-basics.md) — A guide to diagnose and resolve issues within Kubernetes clusters.
+* [Bash Automation](./cheatsheets/bash-automation.md) — Scripting essentials: loops, variables, and automated file manipulation.
 
 ### 📂 [Scenarios](./scenarios/) — Incident Analysis (Post-Mortems)
 
@@ -25,6 +26,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s04-lhasa.md](./scenarios/s04-lhasa.md) — Data Processing: calculating a truncated two-decimal average from structured text data.
 * [s05-bucharest.md](./scenarios/s05-bucharest.md) — Database Connectivity: troubleshooting a PostgreSQL authentication configuration issue.
 * [s06-bilbao.md](./scenarios/s06-bilbao.md) — Kubernetes Pod Scheduling: troubleshooting a pod scheduling issue due to node selector and resource constraints.
+* [s07-minneapolis.md](./scenarios/s07-minneapolis.md) — Bash Automation: splitting CSV data into multiple chunks while preserving headers and specific naming conventions.
 
 ### 📂 [Templates](./templates/) — Incident Documentation
 
