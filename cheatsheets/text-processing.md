@@ -40,4 +40,5 @@ A powerful tool for processing columns and performing arithmetic operations.
 * `wc -l file` — Count the total number of lines.
 * `head -n 20 file` — Display the first 20 lines.
 * `tail -f /var/log/syslog` — Follow log updates in real-time.
+* `tail -q -n +2 *.csv >> merged.csv` — Merge multiple files skipping headers. `-q` ensures file names aren't printed between chunks.
 * `stat file` — Detailed file information (size, permissions, last modified).
