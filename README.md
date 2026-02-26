@@ -15,7 +15,7 @@ A collection of verified algorithms for rapid system diagnostics:
 * [SQL Reference](./cheatsheets/sql-reference.md) — Essential queries for data integrity checks and database troubleshooting.
 * [Kubernetes (K8s)](./cheatsheets/k8s-basics.md) — A guide to diagnose and resolve issues within Kubernetes clusters.
 * [Bash Automation](./cheatsheets/bash-automation.md) — Scripting essentials: loops, variables, and automated file manipulation.
-* [ssl-certificates.md](./cheatsheets/ssl-certificates.md) — SSL/TLS Management: a comprehensive guide for inspecting, generating, and verifying certificates using OpenSSL, including Nginx integration workflows.
+* [SSL Certificates](./cheatsheets/ssl-certificates.md) — SSL/TLS Management: a comprehensive guide for inspecting, generating, and verifying certificates using OpenSSL, including Nginx integration workflows.
 
 ### 📂 [Scenarios](./scenarios/) — Incident Analysis (Post-Mortems)
 
@@ -30,7 +30,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s07-minneapolis.md](./scenarios/s07-minneapolis.md) — Bash Automation: splitting CSV data into multiple chunks while preserving headers and specific naming conventions.
 * [s08-saint-paul.md](./scenarios/s08-saint-paul.md) — Data Engineering: efficiently merging hundreds of CSV files into a single dataset using stream processing.
 * [s09-bata.md](./scenarios/s09-bata.md) — System Inspection: navigating the `/proc` virtual filesystem and isolating data using stream filters (`grep`, `cut`, `awk`).
-* [s11-geneva.md](./scenarios/s11-geneva.md) — Web Security: Identifying and renewing an expired SSL certificate while maintaining identical metadata and updating Nginx configuration.
+* [s10-geneva.md](./scenarios/s10-geneva.md) — Web Security: Identifying and renewing an expired SSL certificate while maintaining identical metadata and updating Nginx configuration.
 
 ### 📂 [Templates](./templates/) — Incident Documentation
 
