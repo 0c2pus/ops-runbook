@@ -16,6 +16,7 @@ A collection of verified algorithms for rapid system diagnostics:
 * [Kubernetes (K8s)](./cheatsheets/k8s-basics.md) — A guide to diagnose and resolve issues within Kubernetes clusters.
 * [Bash Automation](./cheatsheets/bash-automation.md) — Scripting essentials: loops, variables, and automated file manipulation.
 * [SSL Certificates](./cheatsheets/ssl-certificates.md) — SSL/TLS Management: a comprehensive guide for inspecting, generating, and verifying certificates using OpenSSL, including Nginx integration workflows.
+* [Server review guide](./cheatsheets/server-review-guide.md) — Server Reconnaissance: A step-by-step guide to discovering a server's purpose, hardware saturation, and application architecture from scratch.
 
 ### 📂 [Scenarios](./scenarios/) — Incident Analysis (Post-Mortems)
 
