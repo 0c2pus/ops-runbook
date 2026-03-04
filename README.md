@@ -32,6 +32,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s08-saint-paul.md](./scenarios/s08-saint-paul.md) — Data Engineering: efficiently merging hundreds of CSV files into a single dataset using stream processing.
 * [s09-bata.md](./scenarios/s09-bata.md) — System Inspection: navigating the `/proc` virtual filesystem and isolating data using stream filters (`grep`, `cut`, `awk`).
 * [s10-geneva.md](./scenarios/s10-geneva.md) — Web Security: Identifying and renewing an expired SSL certificate while maintaining identical metadata and updating Nginx configuration.
+* [s11-tokamachi.md](./scenarios/s11-tokamachi.md) — IPC: diagnosing and fixing a named pipe writer that blocks due to buffer saturation.
 
 ### 📂 [Templates](./templates/) — Incident Documentation
 
