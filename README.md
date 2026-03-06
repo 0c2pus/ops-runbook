@@ -35,6 +35,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s10-geneva.md](./scenarios/s10-geneva.md) — Web Security: Identifying and renewing an expired SSL certificate while maintaining identical metadata and updating Nginx configuration.
 * [s11-tokamachi.md](./scenarios/s11-tokamachi.md) — IPC: diagnosing and fixing a named pipe writer that blocks due to buffer saturation.
 * [s12-kampot.md](./scenarios/s12-kampot.md) — Networking: redirecting local port 80 to an application port using iptables NAT OUTPUT chain.
+* [s13-cairo.md](./scenarios/s13-cairo.md) — systemd & Firewall: enabling a disabled health check timer and removing a hidden iptables DROP rule blocking local traffic.
 
 ### 📂 [Templates](./templates/) — Incident Documentation
 
