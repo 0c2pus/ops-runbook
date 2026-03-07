@@ -17,7 +17,8 @@ A collection of verified algorithms for rapid system diagnostics:
 * [Bash Automation](./cheatsheets/bash-automation.md) — Scripting essentials: loops, variables, and automated file manipulation.
 * [SSL Certificates](./cheatsheets/ssl-certificates.md) — SSL/TLS Management: a comprehensive guide for inspecting, generating, and verifying certificates using OpenSSL, including Nginx integration workflows.
 * [Server review guide](./cheatsheets/server-review-guide.md) — Server Reconnaissance: A step-by-step guide to discovering a server's purpose, hardware saturation, and application architecture from scratch.
-* [iptables](./cheatsheets/iptables.md) — Firewall & traffic management: port forwarding, NAT rules, filtering, and rule persistence.
+* [Iptables](./cheatsheets/iptables.md) — Firewall & traffic management: port forwarding, NAT rules, filtering, and rule persistence.
+* [Cron](./cheatsheets/cron.md) — Task scheduling: crontab management, schedule syntax, output logging, and debugging silent failures.
 
 ### 📂 [Scenarios](./scenarios/) — Incident Analysis (Post-Mortems)
 
@@ -36,6 +37,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s11-tokamachi.md](./scenarios/s11-tokamachi.md) — IPC: diagnosing and fixing a named pipe writer that blocks due to buffer saturation.
 * [s12-kampot.md](./scenarios/s12-kampot.md) — Networking: redirecting local port 80 to an application port using iptables NAT OUTPUT chain.
 * [s13-cairo.md](./scenarios/s13-cairo.md) — systemd & Firewall: enabling a disabled health check timer and removing a hidden iptables DROP rule blocking local traffic.
+* [s14-alexandria.md](./scenarios/s14-alexandria.md) — Cron & Bash: diagnosing a silently failing backup job caused by a stale lock file and a misconfigured crontab entry.
 
 ### 📂 [Templates](./templates/) — Incident Documentation
 
