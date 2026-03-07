@@ -19,10 +19,14 @@ A collection of verified algorithms for rapid system diagnostics:
 * [Server review guide](./cheatsheets/server-review-guide.md) — Server Reconnaissance: A step-by-step guide to discovering a server's purpose, hardware saturation, and application architecture from scratch.
 * [Iptables](./cheatsheets/iptables.md) — Firewall & traffic management: port forwarding, NAT rules, filtering, and rule persistence.
 * [Cron](./cheatsheets/cron.md) — Task scheduling: crontab management, schedule syntax, output logging, and debugging silent failures.
+* [Systemd](./cheatsheets/systemd.md) — Service & unit management: listing, status checking, controlling services and timers, and reading logs with journalctl.
 
 ### 📂 [Scenarios](./scenarios/) — Incident Analysis (Post-Mortems)
 
 Hands-on cases of resolving issues on live systems. Each scenario includes symptoms, investigation steps, root cause analysis, and dead ends encountered during investigation:
+
+<details>
+<summary>Easy Level</summary>
 
 * [s01-saint-john.md](./scenarios/s01-saint-john.md) — Process Management: terminating a rogue logging process filling the disk.
 * [s02-saskatoon.md](./scenarios/s02-saskatoon.md) — Filesystem: identifying and reclaiming exhausted disk space.
@@ -38,6 +42,13 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s12-kampot.md](./scenarios/s12-kampot.md) — Networking: redirecting local port 80 to an application port using iptables NAT OUTPUT chain.
 * [s13-cairo.md](./scenarios/s13-cairo.md) — systemd & Firewall: enabling a disabled health check timer and removing a hidden iptables DROP rule blocking local traffic.
 * [s14-alexandria.md](./scenarios/s14-alexandria.md) — Cron & Bash: diagnosing a silently failing backup job caused by a stale lock file and a misconfigured crontab entry.
+</details>
+
+<details>
+<summary>Medium Level</summary>
+
+* [s15-manhattan.md](./scenarios/s15-manhattan.md) — Disk & PostgreSQL: diagnosing a failed database service caused by a 100% full disk volume and a misleading parent systemd unit status.
+</details>
 
 ### 📂 [Templates](./templates/) — Incident Documentation
 
