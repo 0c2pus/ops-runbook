@@ -48,6 +48,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 <summary>Medium Level</summary>
 
 * [s15-manhattan.md](./scenarios/s15-manhattan.md) — Disk & PostgreSQL: diagnosing a failed database service caused by a 100% full disk volume and a misleading parent systemd unit status.
+* [s16-tokyo.md](./scenarios/s16-tokyo.md) — Apache & Firewall: unblocking port 80 via iptables and fixing file permissions causing a 403 Forbidden response.
 </details>
 
 ### 📂 [Templates](./templates/) — Incident Documentation
