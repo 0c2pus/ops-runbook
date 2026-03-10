@@ -20,6 +20,8 @@ A collection of verified algorithms for rapid system diagnostics:
 * [Iptables](./cheatsheets/iptables.md) — Firewall & traffic management: port forwarding, NAT rules, filtering, and rule persistence.
 * [Cron](./cheatsheets/cron.md) — Task scheduling: crontab management, schedule syntax, output logging, and debugging silent failures.
 * [Systemd](./cheatsheets/systemd.md) — Service & unit management: listing, status checking, controlling services and timers, and reading logs with journalctl.
+* [Git Reference](./cheatsheets/git-reference.md) — Version control & repository diagnostics: history inspection, commit comparison, and bisect for finding breaking changes.
+* [Linux Users & Groups](./cheatsheets/users-and-groups.md) — User and group management: creating users and groups, managing memberships, file ownership, chmod, and filesystem attributes.
 
 ### 📂 [Scenarios](./scenarios/) — Incident Analysis (Post-Mortems)
 
@@ -34,21 +36,30 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s04-lhasa.md](./scenarios/s04-lhasa.md) — Data Processing: calculating a truncated two-decimal average from structured text data.
 * [s05-bucharest.md](./scenarios/s05-bucharest.md) — Database Connectivity: troubleshooting a PostgreSQL authentication configuration issue.
 * [s06-bilbao.md](./scenarios/s06-bilbao.md) — Kubernetes Pod Scheduling: troubleshooting a pod scheduling issue due to node selector and resource constraints.
-* [s07-minneapolis.md](./scenarios/s07-minneapolis.md) — Bash Automation: splitting CSV data into multiple chunks while preserving headers and specific naming conventions.
-* [s08-saint-paul.md](./scenarios/s08-saint-paul.md) — Data Engineering: efficiently merging hundreds of CSV files into a single dataset using stream processing.
-* [s09-bata.md](./scenarios/s09-bata.md) — System Inspection: navigating the `/proc` virtual filesystem and isolating data using stream filters (`grep`, `cut`, `awk`).
-* [s10-geneva.md](./scenarios/s10-geneva.md) — Web Security: Identifying and renewing an expired SSL certificate while maintaining identical metadata and updating Nginx configuration.
-* [s11-tokamachi.md](./scenarios/s11-tokamachi.md) — IPC: diagnosing and fixing a named pipe writer that blocks due to buffer saturation.
-* [s12-kampot.md](./scenarios/s12-kampot.md) — Networking: redirecting local port 80 to an application port using iptables NAT OUTPUT chain.
-* [s13-cairo.md](./scenarios/s13-cairo.md) — systemd & Firewall: enabling a disabled health check timer and removing a hidden iptables DROP rule blocking local traffic.
-* [s14-alexandria.md](./scenarios/s14-alexandria.md) — Cron & Bash: diagnosing a silently failing backup job caused by a stale lock file and a misconfigured crontab entry.
+* [s07-apia.md (Pro)](./scenarios/s07-apia.md) — Text Processing: identifying a unique file among identical ones by size and extracting the added word using diff.
+* [s08-gitega.md (Pro)](./scenarios/s08-gitega.md) — Git: locating the first bad commit in a repository using git bisect binary search.
+* [s09-minneapolis.md](./scenarios/s09-minneapolis.md) — Bash Automation: splitting CSV data into multiple chunks while preserving headers and specific naming conventions.
+* [s10-saint-paul.md](./scenarios/s10-saint-paul.md) — Data Engineering: efficiently merging hundreds of CSV files into a single dataset using stream processing.
+* [s11-bata.md](./scenarios/s11-bata.md) — System Inspection: navigating the `/proc` virtual filesystem and isolating data using stream filters (`grep`, `cut`, `awk`).
+* [s12-geneva.md](./scenarios/s12-geneva.md) — Web Security: Identifying and renewing an expired SSL certificate while maintaining identical metadata and updating Nginx configuration.
+* [s13-tokamachi.md](./scenarios/s13-tokamachi.md) — IPC: diagnosing and fixing a named pipe writer that blocks due to buffer saturation.
+* [s14-yokohama.md (Pro)](./scenarios/s14-yokohama.md) — Linux Users & Permissions: creating a shared group, managing cross-user file access, and setting append-only file attributes with chattr.
+15pro
+* [s16-kampot.md](./scenarios/s16-kampot.md) — Networking: redirecting local port 80 to an application port using iptables NAT OUTPUT chain.
+17pro
+18pro
+* [s19-cairo.md](./scenarios/s19-cairo.md) — systemd & Firewall: enabling a disabled health check timer and removing a hidden iptables DROP rule blocking local traffic.
+* [s20-alexandria.md](./scenarios/s20-alexandria.md) — Cron & Bash: diagnosing a silently failing backup job caused by a stale lock file and a misconfigured crontab entry.
+21pro
+22pro
 </details>
 
 <details>
 <summary>Medium Level</summary>
 
-* [s15-manhattan.md](./scenarios/s15-manhattan.md) — Disk & PostgreSQL: diagnosing a failed database service caused by a 100% full disk volume and a misleading parent systemd unit status.
-* [s16-tokyo.md](./scenarios/s16-tokyo.md) — Apache & Firewall: unblocking port 80 via iptables and fixing file permissions causing a 403 Forbidden response.
+* [s23-manhattan.md](./scenarios/s23-manhattan.md) — Disk & PostgreSQL: diagnosing a failed database service caused by a 100% full disk volume and a misleading parent systemd unit status.
+* [s24-tokyo.md](./scenarios/s24-tokyo.md) — Apache & Firewall: unblocking port 80 via iptables and fixing file permissions causing a 403 Forbidden response.
+* [s25-capetown.md](./scenarios/s25-capetown.md) — Nginx & systemd: fixing a syntax error in site config and raising a deliberately low LimitNOFILE that caused 500 errors.
 </details>
 
 ### 📂 [Templates](./templates/) — Incident Documentation

@@ -42,3 +42,12 @@ A powerful tool for processing columns and performing arithmetic operations.
 * `tail -f /var/log/syslog` — Follow log updates in real-time.
 * `tail -q -n +2 *.csv >> merged.csv` — Merge multiple files skipping headers. `-q` ensures file names aren't printed between chunks.
 * `stat file` — Detailed file information (size, permissions, last modified).
+
+## 6. File Comparison (diff)
+* `diff file1 file2` - Compare two files line by line. Lines with `<` are from file1, `>` from file2.
+* `diff -u file1 file2` - Unified format: shows context with `-` for removed and `+` for added lines.
+* `diff -q file1 file2` - Quick check: reports only whether files differ, no details.
+* `diff -rq dir1/ dir2/` - Recursively compare two directories and report which files differ.
+
+**Finding a unique file by size before comparing:**
+* `ls -lS /path/` - List files sorted by size (largest first). A file with different size is a starting point for investigation.

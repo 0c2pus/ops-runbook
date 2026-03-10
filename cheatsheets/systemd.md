@@ -38,3 +38,30 @@ Essential commands for managing, inspecting, and debugging systemd units (servic
 | `failed` | Check `journalctl -u <name>` for root cause |
 | Service starts but crashes | Check logs with `journalctl -u <name> -n 100` |
 | Timer not firing | Check `systemctl list-timers` and `is-enabled` |
+
+## 6. Resource Limits
+* `ulimit -a` - Check all resource limits for the current session. Key value: `open files (-n)`.
+* `cat /proc/$(pgrep <service> | head -1)/limits | grep "open files"` - Check the actual open file limit for a running process.
+* `cat /proc/sys/fs/file-max` - Check the system-wide maximum allowed open files.
+
+**Increasing limits for a systemd service:**
+
+Edit the unit override file:
+```bash
+sudo systemctl edit <service>.service
+```
+
+Add the following content:
+```bash
+[Service]
+LimitNOFILE=65536
+```
+
+Apply changes and verify:
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart <service>.service
+cat /proc/$(pgrep <service> | head -1)/limits | grep "open files"
+```
+
+**Note:** Prefer `systemctl edit` over modifying the unit file directly - it creates `/etc/systemd/system/<service>.service.d/override.conf` which survives package updates.
