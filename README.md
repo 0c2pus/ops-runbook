@@ -44,13 +44,13 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s12-geneva.md](./scenarios/s12-geneva.md) — Web Security: Identifying and renewing an expired SSL certificate while maintaining identical metadata and updating Nginx configuration.
 * [s13-tokamachi.md](./scenarios/s13-tokamachi.md) — IPC: diagnosing and fixing a named pipe writer that blocks due to buffer saturation.
 * [s14-yokohama.md (Pro)](./scenarios/s14-yokohama.md) — Linux Users & Permissions: creating a shared group, managing cross-user file access, and setting append-only file attributes with chattr.
-15pro
+* [s15-fukuoka.md (Pro)](./scenarios/s15-fukuoka.md) — Nginx & Permissions: fixing directory and file access rights along a symlink chain to resolve 403 and 404 errors.
 * [s16-kampot.md](./scenarios/s16-kampot.md) — Networking: redirecting local port 80 to an application port using iptables NAT OUTPUT chain.
-17pro
-18pro
+* [s17-rio-de-janeiro.md (Pro)](./scenarios/s17-rio-de-janeiro.md) — Java & systemd: diagnosing a Jenkins startup failure caused by an incompatible Java version and switching to the correct one via update-alternatives.
+* [s18-nuuk.md (Pro)](./scenarios/s18-nuuk.md) — SSH: restoring correct directory permissions on ~/.ssh to fix publickey authentication failure.
 * [s19-cairo.md](./scenarios/s19-cairo.md) — systemd & Firewall: enabling a disabled health check timer and removing a hidden iptables DROP rule blocking local traffic.
 * [s20-alexandria.md](./scenarios/s20-alexandria.md) — Cron & Bash: diagnosing a silently failing backup job caused by a stale lock file and a misconfigured crontab entry.
-21pro
+* [s21-kortenberg.md (Pro)](./scenarios/s21-kortenberg.md) — Linux Permissions: diagnosing and permanently fixing a corrupted umask setting in /etc/profile that caused all new files to be created with no permissions.
 22pro
 </details>
 

@@ -49,3 +49,16 @@ Filesystem-level attributes that work below standard permissions - even root can
 * `sudo chattr -i <file>` - Remove immutable attribute.
 
 **Critical:** Always set ownership and chmod before applying `chattr +a` or `+i` — once set, permissions cannot be changed until the attribute is removed.
+
+## 6. Default Permission Mask (umask)
+* `umask` - Check the current permission mask for the active session.
+* `umask 022` - Standard mask: new directories get `755`, new files get `644`.
+* `umask 077` - Strict mask: new files and directories are private to owner only (`700`/`600`).
+
+**How umask works:** Linux starts with maximum permissions (`777` for dirs, `666` for files) and subtracts the umask value. `umask 022` → `777-022=755` for dirs, `666-022=644` for files.
+
+**Where umask is configured:**
+* `~/.bashrc`, `~/.profile`, `~/.bash_profile` - Per-user settings, loaded on login.
+* `/etc/profile` - System-wide setting, applies to all users on every login shell.
+
+**Note:** Changing `umask` in the current shell is temporary. To make it permanent, edit the appropriate profile file.
