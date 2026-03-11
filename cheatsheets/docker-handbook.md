@@ -22,3 +22,14 @@ Essential commands for managing containers and diagnosing microservice failures.
 ## 4. Cleanup & Recovery
 * `docker stop $(docker ps -q)` — Stop all running containers.
 * `docker system prune -a` — **Use with caution:** Delete all unused containers, networks, and images to free up space.
+
+## 5. Building & Running Containers
+* `docker build -t <image-name> .` - Build an image from Dockerfile in the current directory.
+* `docker build -t <image-name> /path/` - Build an image from Dockerfile in a specific directory.
+* `docker run <image-name>` - Run a container from an image.
+* `docker run -p <host-port>:<container-port> <image-name>` - Run container with port mapping to host.
+* `docker run -d <image-name>` - Run container in detached (background) mode.
+* `docker run -d -p 8888:8888 --name <name> <image-name>` - Run detached with port mapping and custom name.
+* `docker stop <container_id>` - Gracefully stop a running container.
+* `docker rm <container_id>` - Remove a stopped container.
+* `docker rmi <image_id>` - Remove an image.

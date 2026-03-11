@@ -22,6 +22,7 @@ A collection of verified algorithms for rapid system diagnostics:
 * [Systemd](./cheatsheets/systemd.md) — Service & unit management: listing, status checking, controlling services and timers, and reading logs with journalctl.
 * [Git Reference](./cheatsheets/git-reference.md) — Version control & repository diagnostics: history inspection, commit comparison, and bisect for finding breaking changes.
 * [Linux Users & Groups](./cheatsheets/users-and-groups.md) — User and group management: creating users and groups, managing memberships, file ownership, chmod, and filesystem attributes.
+* [jq Reference](./cheatsheets/jq-reference.md) — JSON processing in the CLI: field access, array iteration, filtering with select(), and extracting nested data.
 
 ### 📂 [Scenarios](./scenarios/) — Incident Analysis (Post-Mortems)
 
@@ -51,7 +52,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s19-cairo.md](./scenarios/s19-cairo.md) — systemd & Firewall: enabling a disabled health check timer and removing a hidden iptables DROP rule blocking local traffic.
 * [s20-alexandria.md](./scenarios/s20-alexandria.md) — Cron & Bash: diagnosing a silently failing backup job caused by a stale lock file and a misconfigured crontab entry.
 * [s21-kortenberg.md (Pro)](./scenarios/s21-kortenberg.md) — Linux Permissions: diagnosing and permanently fixing a corrupted umask setting in /etc/profile that caused all new files to be created with no permissions.
-22pro
+* [s22-hamburg.md (Pro)](./scenarios/s22-hamburg.md) — JSON & AWS: filtering AWS EBS volume data using jq to identify a specific volume by multiple criteria.
 </details>
 
 <details>
@@ -60,6 +61,8 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s23-manhattan.md](./scenarios/s23-manhattan.md) — Disk & PostgreSQL: diagnosing a failed database service caused by a 100% full disk volume and a misleading parent systemd unit status.
 * [s24-tokyo.md](./scenarios/s24-tokyo.md) — Apache & Firewall: unblocking port 80 via iptables and fixing file permissions causing a 403 Forbidden response.
 * [s25-capetown.md](./scenarios/s25-capetown.md) — Nginx & systemd: fixing a syntax error in site config and raising a deliberately low LimitNOFILE that caused 500 errors.
+* [s26-salta.md](./scenarios/s26-salta.md) — Docker: fixing Dockerfile bugs (wrong port and entrypoint filename) and resolving a port conflict with nginx to run a Node.js container.
+* [s27-oaxaca.md](./scenarios/s27-oaxaca.md) — Linux File Descriptors: closing an open file descriptor in a running process without killing it using exec and lsof.
 </details>
 
 ### 📂 [Templates](./templates/) — Incident Documentation

@@ -35,6 +35,26 @@ Search for specific error signatures to diagnose why a service might be failing 
 * `tail -f /var/log/syslog` — Watch general system events in real-time to catch spontaneous failures.
 * `docker logs <container_name>` — Retrieve logs from containerized applications that do not write to the standard system journal.
 
-## 5. Summary of Architecture
+## 5. Detecting Environment Type (VM or Container?)
+Before troubleshooting, identify what type of environment you are in - this affects which tools and commands are available.
+* `systemd-detect-virt` - Detect virtualization type. Returns `none` (bare metal), `kvm`/`vmware` (VM), or `docker`/`lxc`/`container-other` (container).
+* `systemd-detect-virt -c` - Check specifically for container environment.
+* `systemd-detect-virt -v` - Check specifically for VM environment.
+* `ls /.dockerenv` - File exists only inside Docker containers. If present - you are in Docker.
+* `cat /proc/1/cgroup` - In Docker containers shows a long container hash. In VMs or bare metal shows `init.scope` or standard systemd cgroups.
+* `cat /proc/self/status | grep -i virt` - Additional virtualization hints from kernel.
+
+**Quick decision table:**
+
+| Result | Environment |
+|---|---|
+| `/.dockerenv` exists | Docker container |
+| `systemd-detect-virt` → `docker` | Docker container |
+| `systemd-detect-virt` → `lxc` | LXC container |
+| `systemd-detect-virt` → `container-other` | Unknown container type |
+| `systemd-detect-virt` → `kvm`/`vmware` | Virtual Machine |
+| `systemd-detect-virt` → `none` | Bare metal server |
+
+## 6. Summary of Architecture
 After investigating, you should be able to visualize the full request path:
 > **User Request** → `Port 8000 (Load Balancer)` → `Port 9000 (App Server)` → `Port 5432 (Database)`.

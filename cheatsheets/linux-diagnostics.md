@@ -30,3 +30,12 @@ Comprehensive guide for identifying bottlenecks in CPU, Memory, I/O, and Process
 * `free -mw` — Detailed memory stats in MB (Wide mode shows buffers/cache separately).
 * `cat /proc/meminfo` — Low-level memory stats (check for HugePages or Slab leaks).
 * `slabtop -o` — Identify kernel-level memory consumption (Slab cache).
+
+## 6. File Descriptors
+Every process has numbered file descriptors - open files, sockets, and pipes. Standard descriptors: `0` = stdin, `1` = stdout, `2` = stderr. Everything above is opened by the process itself.
+* `lsof <file>` — Show which process and descriptor number holds a specific file open.
+* `lsof -p <PID>` — List all open file descriptors for a specific process.
+* `ls -la /proc/<PID>/fd/` — View all open descriptors for a process as symlinks to actual files.
+* `exec N>&-` — Close file descriptor `N` in the current bash session.
+
+**Note:** If a file is deleted but a process still holds it open, disk space is not freed until the descriptor is closed. Use `lsof | grep deleted` to find such cases.
