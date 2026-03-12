@@ -63,6 +63,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s25-capetown.md](./scenarios/s25-capetown.md) — Nginx & systemd: fixing a syntax error in site config and raising a deliberately low LimitNOFILE that caused 500 errors.
 * [s26-salta.md](./scenarios/s26-salta.md) — Docker: fixing Dockerfile bugs (wrong port and entrypoint filename) and resolving a port conflict with nginx to run a Node.js container.
 * [s27-oaxaca.md](./scenarios/s27-oaxaca.md) — Linux File Descriptors: closing an open file descriptor in a running process without killing it using exec and lsof.
+* [s28-melbourne.md (Pro)](./scenarios/s28-melbourne.md) — Nginx & Gunicorn: fixing a broken WSGI request chain caused by a socket name mismatch and incorrect Content-Length header.
 </details>
 
 ### 📂 [Templates](./templates/) — Incident Documentation
