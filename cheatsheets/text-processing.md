@@ -27,6 +27,7 @@ A powerful tool for processing columns and performing arithmetic operations.
 * `awk '{sum+=$1} END {print sum}' file` — Calculate the total sum of the 1st column.
 * `awk '{sum+=$1} END {print sum/NR}' file` — Calculate the arithmetic mean (NR = Number of Records/lines).
 * `awk 'length($0) > 100' file` — Output only lines longer than 100 characters.
+* `awk -F"," '$4 < 100000 {print $2, $9}' file.csv` - Filter rows by numeric condition before printing. Condition goes before `{print}`.
 
 ## 4. Sorting, Uniques & Formatting (sort, uniq, cut, tr)
 * `cut -d',' -f1,3 file.csv` — Extract specific fields (1st and 3rd) from a delimited file.
@@ -35,6 +36,8 @@ A powerful tool for processing columns and performing arithmetic operations.
 * `sort -r` — Reverse sort.
 * `sort -u` — Sort and remove duplicates.
 * `sort | uniq -c | sort -nr` — **The Analytics Pipeline:** Count unique occurrences and sort them from highest to lowest.
+* `sort -n -k 2` — Sort numerically by second column.
+* `sort -rn -k 2` — Sort numerically by second column in reverse (largest first).
 
 ## 5. File Inspection & Statistics
 * `wc -l file` — Count the total number of lines.
@@ -51,3 +54,9 @@ A powerful tool for processing columns and performing arithmetic operations.
 
 **Finding a unique file by size before comparing:**
 * `ls -lS /path/` - List files sorted by size (largest first). A file with different size is a starting point for investigation.
+
+## 7. CSV Diagnostics & Encoding
+* `head -n1 file.csv | tr ',' '\n' | nl` - List all CSV column names with their index numbers. Essential before filtering with awk.
+* `cat -A file` - Show hidden characters. `^M` at end of lines indicates Windows line endings (`\r\n`).
+* `file file.csv` - Detect file type and encoding.
+* `tr -d '\r' < input.csv > output.csv` - Convert Windows line endings to Linux. **Never redirect to the same file** - use a separate output file or data will be lost.
