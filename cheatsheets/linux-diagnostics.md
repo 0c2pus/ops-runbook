@@ -39,3 +39,12 @@ Every process has numbered file descriptors - open files, sockets, and pipes. St
 * `exec N>&-` — Close file descriptor `N` in the current bash session.
 
 **Note:** If a file is deleted but a process still holds it open, disk space is not freed until the descriptor is closed. Use `lsof | grep deleted` to find such cases.
+
+## 7. Sparse Files & Disk Space
+A sparse file has a large logical size but only consumes disk space for blocks that contain actual data. Blocks of zeros are not physically written to disk - the OS simply records their position.
+
+* `truncate -s <size> <file>` - Create or resize a file to a specific size as a sparse file without allocating real disk blocks.
+* `du -h <file>` - Show actual disk usage (how much space is physically allocated on disk).
+* `du -h --apparent-size <file>` - Show apparent size (logical size as reported by the filesystem).
+
+**Note:** For a sparse file these two values will differ significantly. To convert a regular file to sparse: clear its contents first with `> <file>`, then restore logical size with `truncate`.
