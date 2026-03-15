@@ -3,6 +3,7 @@
 Essential tool for parsing, filtering, and extracting data from JSON files and API responses directly in the terminal.
 
 ## 1. Basic Output
+* `jq 'keys' file.json` - List all top-level keys of a JSON object. Essential first step when exploring an unknown JSON structure.
 * `jq '.' file.json` - Pretty-print the entire JSON file with formatting.
 * `jq '.[0]' file.json` - Access the first element of a top-level array.
 * `jq '.[]' file.json` - Iterate over all elements of a top-level array.

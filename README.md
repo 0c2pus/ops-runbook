@@ -65,6 +65,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s27-oaxaca.md](./scenarios/s27-oaxaca.md) — Linux File Descriptors: closing an open file descriptor in a running process without killing it using exec and lsof.
 * [s28-melbourne.md (Pro)](./scenarios/s28-melbourne.md) — Nginx & Gunicorn: fixing a broken WSGI request chain caused by a socket name mismatch and incorrect Content-Length header.
 * [s29-kihei.md](./scenarios/s29-kihei.md) — Disk Space: converting a large file to a sparse file to free real disk blocks while preserving the logical file size required by the application.
+* [s30-unimak-island.md (Pro)](./scenarios/s30-unimak-island.md) — JSON: filtering nested station data using jq select with boolean and numeric conditions.
 </details>
 
 ### 📂 [Templates](./templates/) — Incident Documentation
