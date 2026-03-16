@@ -67,6 +67,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s29-kihei.md](./scenarios/s29-kihei.md) — Disk Space: converting a large file to a sparse file to free real disk blocks while preserving the logical file size required by the application.
 * [s30-unimak-island.md (Pro)](./scenarios/s30-unimak-island.md) — JSON: filtering nested station data using jq select with boolean and numeric conditions.
 * [s31-ivujivik.md (Pro)](./scenarios/s31-ivujivik.md) - CSV Processing: fixing Windows line endings, identifying column indexes, and filtering with awk conditions to find a specific electoral district.
+* [s32-paris.md](./scenarios/s32-paris.md) — HTTP: bypassing a User-Agent based block in a Flask application by spoofing a browser User-Agent with curl -A.
 </details>
 
 ### 📂 [Templates](./templates/) — Incident Documentation

@@ -11,6 +11,8 @@ Tools for verifying network configurations, DNS, SSL, and traffic flow.
 * `curl -Iv https://example.com` — Show HTTP response headers and SSL certificate details.
 * `curl -Lo /dev/null -s -w "%{http_code}\n" <URL>` — Quickly check HTTP status code only.
 * `curl -x http://proxy:8080 <URL>` — Test connectivity through a specific proxy server.
+* `curl -A "Mozilla/5.0" <url>` - Send request with a custom User Agent string. Use when a server blocks curl but responds to browsers.
+* `curl -v <url>` — Verbose mode: shows request headers including User-Agent being sent.
 
 ## 3. Port & Service Discovery
 * `ss -tulpn` — List all listening TCP/UDP ports with PIDs (Replacement for `netstat`).
