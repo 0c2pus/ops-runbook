@@ -32,3 +32,18 @@ A guide for L2 Support Engineers to diagnose and resolve issues within Kubernete
 * **CrashLoopBackOff:** The application starts but immediately crashes (check logs).
 * **ImagePullBackOff:** Incorrect image name or lack of permissions to the registry.
 * **Terminating:** A pod is stuck in deletion, often due to a finalizer or unresponsive node.
+
+## 6. RBAC - Role Based Access Control
+RBAC controls what service accounts (used by pods) are allowed to do in the cluster. Missing permissions cause 403 Forbidden errors in pod logs.
+
+* `kubectl get roles,rolebindings,clusterroles,clusterrolebindings` - List all RBAC resources in the cluster.
+* `kubectl describe clusterrole <name>` - Show what resources and verbs a ClusterRole permits.
+* `kubectl describe clusterrolebinding <name>` - Show which service account a ClusterRole is assigned to.
+* `kubectl edit clusterrole <name>` - Edit a ClusterRole to add or remove permissions.
+
+**Common verbs:** `get`, `list`, `watch`, `create`, `update`, `patch`, `delete`.
+Note: `list` retrieves a collection, `get` retrieves a specific resource - both are often needed together.
+
+**Debugging RBAC errors:**
+A 403 error in pod logs like:
+`User "system:serviceaccount:default:myapp-sa" cannot get resource "pods/log"` means the ServiceAccount is missing the `get` verb on `pods/log` in its ClusterRole.
