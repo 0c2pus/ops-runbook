@@ -38,6 +38,10 @@ A powerful tool for processing columns and performing arithmetic operations.
 * `sort | uniq -c | sort -nr` — **The Analytics Pipeline:** Count unique occurrences and sort them from highest to lowest.
 * `sort -n -k 2` — Sort numerically by second column.
 * `sort -rn -k 2` — Sort numerically by second column in reverse (largest first).
+* `tr 'A-Z' 'a-z'` - Convert text to lowercase.
+* `tr ' ' '\n'` — Replace spaces with newlines - splits text into one word per line.
+* `tr ',.;:' ' '` — Replace multiple punctuation characters with spaces simultaneously.
+* `tr -s ' '` - Squeeze multiple consecutive spaces into one.
 
 ## 5. File Inspection & Statistics
 * `wc -l file` — Count the total number of lines.
