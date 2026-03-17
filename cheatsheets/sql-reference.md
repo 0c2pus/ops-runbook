@@ -20,3 +20,18 @@ Tools and queries for data extraction, performance checking, and basic DB mainte
 ## 4. Connectivity & CLI
 * `mysql -u user -p -h host database` — Connect to a remote MySQL instance.
 * `psql -U user -d database -h host` — Connect to a remote PostgreSQL instance.
+
+## 5. MariaDB/MySQL Administration
+* `mysql -u root` - Connect as root without password.
+* `mysql -u root -p` - Connect as root with password prompt.
+* `mysql -u root -p<password> <database>` - Connect to specific database with password (no space between -p and password).
+* `mysql -u root <database> < backup.sql` - Restore database from SQL dump file.
+* `mysql -u root -e "SHOW TABLES;"` - Execute SQL command from shell without entering interactive mode.
+
+**Inside MariaDB:**
+* `SHOW DATABASES;` - List all databases.
+* `USE <database>;` - Switch to a specific database.
+* `SHOW TABLES;` - List all tables in current database.
+* `FLUSH PRIVILEGES;` - Reload grant tables - required after manual user table changes.
+* `ALTER USER 'root'@'localhost' IDENTIFIED BY 'newpassword';` - Change user password.
+* `ALTER USER 'root'@'localhost' IDENTIFIED BY '';` - Remove password (set empty).

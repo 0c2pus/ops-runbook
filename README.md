@@ -71,6 +71,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s33-buenos-aires.md](./scenarios/s33-buenos-aires.md) - Kubernetes RBAC: fixing a CrashLoopBackOff caused by missing `get` verb on `pods/log` in a ClusterRole.
 * [s34-tarifa.md (Pro)](./scenarios/s34-tarifa.md) — Docker Compose & HAProxy: fixing load balancing by correcting a port mismatch and adding a missing shared network between HAProxy and a backend nginx container.
 * [s35-marrakech.md](./scenarios/s35-marrakech.md) - Text Processing: building a word frequency pipeline using tr, sort, and uniq to find the second most common word in a large text file.
+* [s36-rosario.md](./scenarios/s36-rosario.md) - MariaDB: resetting an unknown root password via skip-grant-tables and restoring a corrupted SQL dump with fixed statement terminators.
 </details>
 
 ### 📂 [Templates](./templates/) — Incident Documentation
