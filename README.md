@@ -69,6 +69,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s31-ivujivik.md (Pro)](./scenarios/s31-ivujivik.md) - CSV Processing: fixing Windows line endings, identifying column indexes, and filtering with awk conditions to find a specific electoral district.
 * [s32-paris.md](./scenarios/s32-paris.md) — HTTP: bypassing a User-Agent based block in a Flask application by spoofing a browser User-Agent with curl -A.
 * [s33-buenos-aires.md](./scenarios/s33-buenos-aires.md) - Kubernetes RBAC: fixing a CrashLoopBackOff caused by missing `get` verb on `pods/log` in a ClusterRole.
+* [s34-tarifa.md (Pro)](./scenarios/s34-tarifa.md) — Docker Compose & HAProxy: fixing load balancing by correcting a port mismatch and adding a missing shared network between HAProxy and a backend nginx container.
 </details>
 
 ### 📂 [Templates](./templates/) — Incident Documentation

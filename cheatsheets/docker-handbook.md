@@ -33,3 +33,12 @@ Essential commands for managing containers and diagnosing microservice failures.
 * `docker stop <container_id>` - Gracefully stop a running container.
 * `docker rm <container_id>` - Remove a stopped container.
 * `docker rmi <image_id>` - Remove an image.
+
+## 6. Docker Compose
+* `docker compose up -d` - Start all services in detached mode, applying any config changes from `docker-compose.yml`.
+* `docker compose down` - Stop and remove all containers, networks defined in the compose file.
+* `docker compose restart` - Restart containers without applying config changes. Use `up -d` instead when you changed `docker-compose.yml`.
+* `docker compose logs -f` - Follow logs from all services simultaneously.
+* `docker compose ps` - List status of all services defined in compose file.
+
+**Note:** `docker-compose` (with hyphen) is the older v1 syntax. Modern Docker uses `docker compose` (without hyphen) as a plugin.
