@@ -26,7 +26,7 @@ jq '.Volumes[] | select(.VolumeType == "gp3" and .Size < 64 and .Iops < 1500 and
 
 **Comparison operators:** `==`, `!=`, `<`, `>`, `<=`, `>=`
 
-**Note:** Date strings in ISO 8601 format (`2025-09-29T...`) are lexicographically sortable — string comparison works correctly for dates.
+**Note:** Date strings in ISO 8601 format (`2025-09-29T...`) are lexicographically sortable - string comparison works correctly for dates.
 
 ## 4. Pipes
 jq supports pipes just like Linux shell:

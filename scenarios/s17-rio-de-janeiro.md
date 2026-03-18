@@ -47,7 +47,7 @@ _Observation: Java 21 (`java-21-openjdk-amd64`) is installed alongside Java 8._
 
 ## ❌ What Didn't Work
 
-- Starting Jenkins without fixing Java version — service crashed immediately with `UnsupportedClassVersionError`.
+- Starting Jenkins without fixing Java version - service crashed immediately with `UnsupportedClassVersionError`.
 
 ## ✅ Root Cause
 

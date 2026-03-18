@@ -21,7 +21,7 @@ sudo systemctl status health.service
 ```
 
 _Observation: Both units are `inactive (dead)` and `disabled`. The timer
-triggers the service — starting only the service would run it once without
+triggers the service - starting only the service would run it once without
 repeat._
 
 ### Step 3: Enable and start the timer
@@ -99,6 +99,6 @@ _Log now shows `STATUS: OK` every 10 seconds._
 ## 💡 Lessons Learned
 
 - `systemctl list-timers` shows only active timers. Use `systemctl status <unit>` to find disabled units that exist but don't run.
-- Always `enable` a timer, not just `start` — without `enable` the timer won't survive a reboot.
+- Always `enable` a timer, not just `start` - without `enable` the timer won't survive a reboot.
 - `iptables -L` without `-t` shows the default filter table. `-t nat` shows the NAT table. They are separate and serve different purposes.
 - A service can be `active (running)` and still not respond to requests if firewall rules block traffic at the kernel level.

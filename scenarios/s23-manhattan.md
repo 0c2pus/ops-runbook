@@ -78,7 +78,7 @@ sudo systemctl restart postgresql@14-main.service
 sudo -u postgres psql -c "insert into persons(name) values ('jane smith');" -d dt
 ```
 
-_Returns `INSERT 0 1` — success._
+_Returns `INSERT 0 1` - success._
 
 ## 💡 Lessons Learned
 

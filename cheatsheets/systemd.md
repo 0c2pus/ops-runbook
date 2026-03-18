@@ -1,4 +1,4 @@
-# systemd — Service & Unit Management
+# systemd - Service & Unit Management
 
 Essential commands for managing, inspecting, and debugging systemd units (services, timers, slices) on Linux systems.
 
@@ -14,7 +14,7 @@ Essential commands for managing, inspecting, and debugging systemd units (servic
 * `systemctl status <name>.timer` - Explicitly target a timer unit.
 * `systemctl is-enabled <name>` - Check if a unit is enabled for autostart on boot.
 
-**Warning:** `active (exited)` does not mean the service is healthy — always verify the actual process exists with `ps aux | grep <name>`.
+**Warning:** `active (exited)` does not mean the service is healthy - always verify the actual process exists with `ps aux | grep <name>`.
 
 ## 3. Controlling Units
 * `systemctl start <name>` - Start a unit immediately.
@@ -29,7 +29,7 @@ Essential commands for managing, inspecting, and debugging systemd units (servic
 * `journalctl -u <name>` - Show all logs for a specific unit.
 * `journalctl -u <name> -n 50` - Show last 50 log lines for a unit.
 * `journalctl -u <name> -f` - Follow live log output for a unit.
-* `journalctl -p 3 -xb` — Show only critical errors from the current boot.
+* `journalctl -p 3 -xb` - Show only critical errors from the current boot.
 
 ## 5. Common Failure Patterns
 | Symptom | What to check |

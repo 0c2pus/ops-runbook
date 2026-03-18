@@ -14,7 +14,7 @@ mkfifo namedpipe
 ```
 
 _This creates a special FIFO file. The `p` file type in `ls -la` output confirms
-it is a pipe, not a regular file. Data written to it is never stored on disk —
+it is a pipe, not a regular file. Data written to it is never stored on disk -
 it exists only during transmission between two processes._
 
 ### Step 2: Start the reader
@@ -29,12 +29,12 @@ tail -f reader.log
 ```
 
 _Observation: After ~1 minute the reader stops receiving messages. The writer
-loop blocks because the pipe buffer is full — the reader cannot consume messages
+loop blocks because the pipe buffer is full - the reader cannot consume messages
 fast enough when the writer sends without any delay._
 
 ## ❌ What Didn't Work
 
-- Tight loop without delay — writer fills the pipe buffer faster than the reader
+- Tight loop without delay - writer fills the pipe buffer faster than the reader
   can drain it, causing the writer to block and the entire pipeline to stall.
 
 ## ✅ Root Cause
@@ -61,9 +61,9 @@ _Messages continued to appear consistently without interruption._
 
 ## 💡 Lessons Learned
 
-- A named pipe (FIFO) is not a file on disk — data exists only during the
+- A named pipe (FIFO) is not a file on disk - data exists only during the
   transfer between two processes and is gone once the reader consumes it.
 - Named pipes have a fixed kernel buffer. If the writer is faster than the
-  reader, the writer blocks — it does not crash or drop data.
+  reader, the writer blocks - it does not crash or drop data.
 - In a tight loop writing to a pipe, always consider the reader's consumption
   speed. A small `sleep` is often enough to prevent buffer saturation.

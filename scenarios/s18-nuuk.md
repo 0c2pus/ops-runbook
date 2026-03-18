@@ -33,7 +33,7 @@ _The `.ssh` directory has no permissions for anyone - not even the owner. SSH cl
 
 ## ✅ Root Cause
 
-The `.ssh` directory had permissions `000` — completely locked. SSH requires strict ownership and permission rules to function. The SSH client refused to use the keys because it could not read the directory contents.
+The `.ssh` directory had permissions `000` - completely locked. SSH requires strict ownership and permission rules to function. The SSH client refused to use the keys because it could not read the directory contents.
 
 ## 🛠 Resolution
 

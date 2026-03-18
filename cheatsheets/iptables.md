@@ -4,9 +4,9 @@ Core tool for managing Linux kernel firewall rules: filtering traffic,
 redirecting ports, and masquerading connections.
 
 ## 1. Viewing Current Rules
-* `sudo iptables -L -n -v` — List all filter rules with packet counters.
-* `sudo iptables -t nat -L -n -v` — List NAT rules (port forwarding, masquerade).
-* `sudo iptables -L -n --line-numbers` — Show rules with line numbers (needed for deletion).
+* `sudo iptables -L -n -v` - List all filter rules with packet counters.
+* `sudo iptables -t nat -L -n -v` - List NAT rules (port forwarding, masquerade).
+* `sudo iptables -L -n --line-numbers` - Show rules with line numbers (needed for deletion).
 
 ## 2. Port Forwarding (NAT Redirect)
 * `sudo iptables -t nat -A OUTPUT -p tcp --dport <from> -j REDIRECT --to-port <to>` - Redirect local traffic (curl, local apps) from one port to another.

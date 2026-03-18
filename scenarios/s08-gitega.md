@@ -60,4 +60,4 @@ echo "2e44089778e44dcd9b97aa3baacdcff10311841b" > /home/admin/solution
 
 - `git bisect` performs a binary search through commit history - it halves the search space at each step. 9 commits requires only 3-4 steps instead of checking each commit manually.
 - `git bisect run <command>` fully automates the process - git runs the command at each step and uses the exit code (0 = good, non-zero = bad) to navigate automatically.
-- Always inspect README and documentation files in a repository — they often contain critical context about known issues and solutions.
+- Always inspect README and documentation files in a repository - they often contain critical context about known issues and solutions.

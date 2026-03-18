@@ -48,7 +48,7 @@ Filesystem-level attributes that work below standard permissions - even root can
 * `sudo chattr +i <file>` - Set immutable: file cannot be modified, deleted, or renamed by anyone including root.
 * `sudo chattr -i <file>` - Remove immutable attribute.
 
-**Critical:** Always set ownership and chmod before applying `chattr +a` or `+i` — once set, permissions cannot be changed until the attribute is removed.
+**Critical:** Always set ownership and chmod before applying `chattr +a` or `+i` - once set, permissions cannot be changed until the attribute is removed.
 
 ## 6. Default Permission Mask (umask)
 * `umask` - Check the current permission mask for the active session.

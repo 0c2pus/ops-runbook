@@ -18,7 +18,7 @@ _Observation: Each project file is owned by its respective user with group set t
 
 ## ✅ Root Cause
 
-No shared group existed to grant cross-user read access. The `ALL` file required append-only protection which standard chmod cannot provide — a filesystem-level attribute is needed.
+No shared group existed to grant cross-user read access. The `ALL` file required append-only protection which standard chmod cannot provide - a filesystem-level attribute is needed.
 
 ## 🛠 Resolution
 

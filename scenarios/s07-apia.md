@@ -52,6 +52,6 @@ md5sum /home/admin/solution
 
 ## 💡 Lessons Learned
 
-- When looking for a unique file among many, file size is the fastest first filter — `ls -lS` sorts by size and immediately highlights outliers.
+- When looking for a unique file among many, file size is the fastest first filter - `ls -lS` sorts by size and immediately highlights outliers.
 - `diff -u` shows the differing lines with context. For small files visual inspection is practical, but for large-scale automation a pipeline with `grep`, `awk`, or `comm` would be needed.
 - `comm` is an alternative to diff for comparing sorted files line by line and is sometimes easier to pipe into further processing.

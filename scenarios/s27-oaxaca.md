@@ -43,4 +43,4 @@ _Returns nothing - file descriptor is closed._
 - `lsof <file>` shows which process and which file descriptor number holds a file open.
 - `exec N>&-` closes file descriptor `N` in the current bash session. `&` refers to a descriptor, `-` means close.
 - If the process holding the file is the current shell - no elevated privileges or external tools are needed.
-- If the process were a different PID, `gdb` would be needed to close the descriptor remotely — but it requires installation and sudo access.
+- If the process were a different PID, `gdb` would be needed to close the descriptor remotely - but it requires installation and sudo access.

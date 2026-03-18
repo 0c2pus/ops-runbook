@@ -41,13 +41,13 @@ sudo iptables -D INPUT <line_number>
 _Observation: curl now returns a response, but with `403 Forbidden`._
 
 ### Step 5: Investigate 403 Forbidden
-403 means the server is reachable but access to the resource is denied — either file permissions or directory permissions are wrong.
+403 means the server is reachable but access to the resource is denied - either file permissions or directory permissions are wrong.
 ```bash
 ls -la /var/www/html/
 ls -la /var/www/html/index.html
 ```
 
-_Observation: `index.html` has permissions `600` — only owner (root) can read it. Apache runs as `www-data` and has no read access._
+_Observation: `index.html` has permissions `600` - only owner (root) can read it. Apache runs as `www-data` and has no read access._
 ```bash
 -rw------- 1 root root  index.html
 ```

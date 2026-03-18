@@ -47,6 +47,6 @@ sudo -u <user> /path/to/script.sh
 ## 5. Lock Files & flock
 Manual lock files can cause silent failures if a script crashes without cleaning up. Use `flock` for safer locking:
 ```bash
-# Run script with automatic lock — released even if script crashes
+# Run script with automatic lock - released even if script crashes
 * * * * * flock -n /tmp/myjob.lock /path/to/script.sh
 ```
