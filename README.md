@@ -23,6 +23,7 @@ A collection of verified algorithms for rapid system diagnostics:
 * [Git Reference](./cheatsheets/git-reference.md) - Version control & repository diagnostics: history inspection, commit comparison, and bisect for finding breaking changes.
 * [Linux Users & Groups](./cheatsheets/users-and-groups.md) - User and group management: creating users and groups, managing memberships, file ownership, chmod, and filesystem attributes.
 * [jq Reference](./cheatsheets/jq-reference.md) - JSON processing in the CLI: field access, array iteration, filtering with select(), and extracting nested data.
+* [Helm Reference](./cheatsheets/helm-reference.md) - Kubernetes package manager: chart deployment, release management, upgrade with values files, and common pitfalls.
 
 ### 📂 [Scenarios](./scenarios/) - Incident Analysis (Post-Mortems)
 
@@ -73,6 +74,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s35-marrakech.md](./scenarios/s35-marrakech.md) - Text Processing: building a word frequency pipeline using tr, sort, and uniq to find the second most common word in a large text file.
 * [s36-rosario.md](./scenarios/s36-rosario.md) - MariaDB: resetting an unknown root password via skip-grant-tables and restoring a corrupted SQL dump with fixed statement terminators.
 * [s37-abaokoro.md (Pro)](./scenarios/s37-abaokoro.md) - Disk Quota & MariaDB: stopping a rogue timer filling disk quota, resetting unknown root password, and restoring multiple databases from a compressed archive.
+* [s38-poznan.md (Pro)](./scenarios/s38-poznan.md) - Helm & Kubernetes: fixing a chart that serves default nginx page by adding ConfigMap volume mount to deployment, and correcting replica count via explicit values file upgrade.
 </details>
 
 ### 📂 [Templates](./templates/) - Incident Documentation
