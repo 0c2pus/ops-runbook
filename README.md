@@ -24,6 +24,7 @@ A collection of verified algorithms for rapid system diagnostics:
 * [Linux Users & Groups](./cheatsheets/users-and-groups.md) - User and group management: creating users and groups, managing memberships, file ownership, chmod, and filesystem attributes.
 * [jq Reference](./cheatsheets/jq-reference.md) - JSON processing in the CLI: field access, array iteration, filtering with select(), and extracting nested data.
 * [Helm Reference](./cheatsheets/helm-reference.md) - Kubernetes package manager: chart deployment, release management, upgrade with values files, and common pitfalls.
+* [Compression & Archiving](./cheatsheets/compression.md) - File compression tools: gzip, xz, bzip2, and tar with compression levels, decompression commands, and tips for improving compression ratio.
 
 ### 📂 [Scenarios](./scenarios/) - Incident Analysis (Post-Mortems)
 
@@ -75,6 +76,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s36-rosario.md](./scenarios/s36-rosario.md) - MariaDB: resetting an unknown root password via skip-grant-tables and restoring a corrupted SQL dump with fixed statement terminators.
 * [s37-abaokoro.md (Pro)](./scenarios/s37-abaokoro.md) - Disk Quota & MariaDB: stopping a rogue timer filling disk quota, resetting unknown root password, and restoring multiple databases from a compressed archive.
 * [s38-poznan.md (Pro)](./scenarios/s38-poznan.md) - Helm & Kubernetes: fixing a chart that serves default nginx page by adding ConfigMap volume mount to deployment, and correcting replica count via explicit values file upgrade.
+* [s39-manado.md (Pro)](./scenarios/s39-manado.md) - Compression: achieving target file size by sorting content before applying xz compression to maximize repeating pattern detection.
 </details>
 
 ### 📂 [Templates](./templates/) - Incident Documentation
