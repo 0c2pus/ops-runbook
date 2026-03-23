@@ -77,6 +77,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s37-abaokoro.md (Pro)](./scenarios/s37-abaokoro.md) - Disk Quota & MariaDB: stopping a rogue timer filling disk quota, resetting unknown root password, and restoring multiple databases from a compressed archive.
 * [s38-poznan.md (Pro)](./scenarios/s38-poznan.md) - Helm & Kubernetes: fixing a chart that serves default nginx page by adding ConfigMap volume mount to deployment, and correcting replica count via explicit values file upgrade.
 * [s39-manado.md (Pro)](./scenarios/s39-manado.md) - Compression: achieving target file size by sorting content before applying xz compression to maximize repeating pattern detection.
+* [s40-warsaw.md (Pro)](./scenarios/s40-warsaw.md) — Docker & Golang: fixing a Prometheus metrics endpoint that registered GET route as POST, causing all scrape requests to return 404.
 </details>
 
 ### 📂 [Templates](./templates/) - Incident Documentation
