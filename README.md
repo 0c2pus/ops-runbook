@@ -25,6 +25,7 @@ A collection of verified algorithms for rapid system diagnostics:
 * [jq Reference](./cheatsheets/jq-reference.md) - JSON processing in the CLI: field access, array iteration, filtering with select(), and extracting nested data.
 * [Helm Reference](./cheatsheets/helm-reference.md) - Kubernetes package manager: chart deployment, release management, upgrade with values files, and common pitfalls.
 * [Compression & Archiving](./cheatsheets/compression.md) - File compression tools: gzip, xz, bzip2, and tar with compression levels, decompression commands, and tips for improving compression ratio.
+* [AppArmor](./cheatsheets/apparmor.md) - Application security profiles: reading AppArmor denials, editing profiles to grant file access, and reloading profiles after changes.
 
 ### 📂 [Scenarios](./scenarios/) - Incident Analysis (Post-Mortems)
 
@@ -79,6 +80,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s39-manado.md (Pro)](./scenarios/s39-manado.md) - Compression: achieving target file size by sorting content before applying xz compression to maximize repeating pattern detection.
 * [s40-warsaw.md (Pro)](./scenarios/s40-warsaw.md) - Docker & Golang: fixing a Prometheus metrics endpoint that registered GET route as POST, causing all scrape requests to return 404.
 * [s41-moyogalpa.md](./scenarios/s41-moyogalpa.md) - Security: fixing a broken HTTPS webapp by resolving certificate permissions, AppArmor profile restrictions, CA trust, and hostname resolution simultaneously.
+* [s42-helsingor.md](./scenarios/s42-helsingor.md) - PostgreSQL Replication: fixing replica container failing due to misconfigured postgres.conf parameters.
 </details>
 
 ### 📂 [Templates](./templates/) - Incident Documentation
