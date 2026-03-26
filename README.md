@@ -81,6 +81,7 @@ Hands-on cases of resolving issues on live systems. Each scenario includes sympt
 * [s40-warsaw.md (Pro)](./scenarios/s40-warsaw.md) - Docker & Golang: fixing a Prometheus metrics endpoint that registered GET route as POST, causing all scrape requests to return 404.
 * [s41-moyogalpa.md](./scenarios/s41-moyogalpa.md) - Security: fixing a broken HTTPS webapp by resolving certificate permissions, AppArmor profile restrictions, CA trust, and hostname resolution simultaneously.
 * [s42-helsingor.md](./scenarios/s42-helsingor.md) - PostgreSQL Replication: fixing replica container failing due to misconfigured postgres.conf parameters.
+* [s43-bekasi.md (Pro)](./scenarios/s43-bekasi.md) - Supervisor: fixing missing environment variables for uwsgi process managed by supervisord.
 </details>
 
 ### 📂 [Templates](./templates/) - Incident Documentation
